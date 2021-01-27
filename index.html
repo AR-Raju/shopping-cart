@@ -1,82 +1,165 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Shopping Cart</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
 
-<head>
-   <title>Shopping Cart</title>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
-   <link href="style.css" rel="stylesheet">
-</head>
-
-<body>
-
-   <section>
+  <body>
+    <section>
       <div class="container">
-         <div class="cart">
-            <div class="col-md-12 col-lg-10 mx-auto">
-               <div class="cart-item">
-                  <div class="row">
-                     <div class="col-md-7 center-item">
-                        <img src="images/product-1.png" alt="">
-                        <h5>iPhone 11 128GB Black</h5>
-                     </div>
+        <div class="cart">
+          <div class="col-md-12 col-lg-10 mx-auto">
+            <div class="cart-item">
+              <div class="row">
+                <div class="col-md-7 center-item">
+                  <img src="images/product-1.png" alt="" />
+                  <h5>iPhone 11 128GB Black</h5>
+                </div>
 
-                     <div class="col-md-5 center-item">
-                        <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
-                        </div>
-                        <h5>$1219</h5>
-                        <img src="images/remove.png" alt="" class="remove-item">
-                     </div>
+                <div class="col-md-5 center-item">
+                  <div class="input-group number-spinner">
+                    <button id="mobileMinus" class="btn btn-default">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                    <input
+                      id="mobileAmount"
+                      type="text"
+                      class="form-control text-center"
+                      value="1"
+                    />
+                    <button id="mobilePlus" class="btn btn-default">
+                      <i class="fas fa-plus"></i>
+                    </button>
                   </div>
-               </div>
-
-               <div class="cart-item">
-                  <div class="row">
-                     <div class="col-md-7 center-item mx-auto">
-                        <img src="images/product-2.png" alt="">
-                        <h5>iPhone 11 Silicone Case - Black</h5>
-                     </div>
-                     <div class="col-md-5 center-item">
-                        <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
-
-                        </div>
-                        <h5>$59</h5>
-                        <img src="images/remove.png" alt="" class="remove-item">
-                     </div>
-                  </div>
-               </div>
-
-               <div class="cart-item">
-                  <div class="row">
-
-                     <div class="col-md-8">
-                        <h5>Subtotal: </h5>
-                        <h5>Tax:</h5>
-                        <h5>Total:</h5>
-                     </div>
-
-                     <div class="col-md-4 status">
-                        <h5>$1,278</h5>
-                        <h5>$0</h5>
-                        <h5>$1,278</h5>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-12 pt-4 pb-4">
-                  <button type="button" class="btn btn-success check-out">Check Out</button>
-               </div>
+                  <h5>$ <span id="mobilePrice">1219</span></h5>
+                  <img src="images/remove.png" alt="" class="remove-item" />
+                </div>
+              </div>
             </div>
-         </div>
-      </div>
-   </section>
-</body>
 
+            <div class="cart-item">
+              <div class="row">
+                <div class="col-md-7 center-item mx-auto">
+                  <img src="images/product-2.png" alt="" />
+                  <h5>iPhone 11 Silicone Case - Black</h5>
+                </div>
+                <div class="col-md-5 center-item">
+                  <div class="input-group number-spinner">
+                    <button id="casingMinus" class="btn btn-default">
+                      <i class="fas fa-minus"></i>
+                    </button>
+                    <input
+                      id="casingAmount"
+                      type="text"
+                      class="form-control text-center"
+                      value="1"
+                    />
+                    <button id="casingPlus" class="btn btn-default">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </div>
+                  <h5>$ <span id="casingPrice">59</span></h5>
+                  <img src="images/remove.png" alt="" class="remove-item" />
+                </div>
+              </div>
+            </div>
+
+            <div class="cart-item">
+              <div class="row">
+                <div class="col-md-8">
+                  <h5>Subtotal:</h5>
+                  <h5>Tax:</h5>
+                  <h5>Total:</h5>
+                </div>
+
+                <div class="col-md-4 status">
+                  <h5>$ <span id="sub-total">1278</span></h5>
+                  <h5>$0</h5>
+                  <h5>$ <span id="total">1278</span></h5>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 pt-4 pb-4">
+              <button type="button" class="btn btn-success check-out">
+                Check Out
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      // mobilePlus button handler
+      const mobilePlusBtn = document.getElementById("mobilePlus");
+      mobilePlusBtn.addEventListener("click", function () {
+        const mobileAmount = document.getElementById("mobileAmount").value;
+        var mobileAmountNumber = getInputNumber("mobileAmount") + 1;
+        document.getElementById("mobileAmount").value = mobileAmountNumber;
+        updateItemSpanText("mobilePrice", 1219, 1);
+        updateItemSpanText("sub-total", 1219, 1);
+        updateItemSpanText("total", 1219, 1);
+      });
+
+      // mobileMinus button handler
+      const mobileMinusBtn = document.getElementById("mobileMinus");
+      mobileMinusBtn.addEventListener("click", function () {
+        const mobileAmount = document.getElementById("mobileAmount").value;
+        var mobileAmountNumber = getInputNumber("mobileAmount") - 1;
+        document.getElementById("mobileAmount").value = mobileAmountNumber;
+        updateItemSpanText("mobilePrice", 1219, 2);
+        updateItemSpanText("sub-total", 1219, 2);
+        updateItemSpanText("total", 1219, 2);
+      });
+
+      // casingPlus button handler
+      const casingPlusBtn = document.getElementById("casingPlus");
+      casingPlusBtn.addEventListener("click", function () {
+        const casingAmount = document.getElementById("casingAmount").value;
+        var casingAmountNumber = getInputNumber("casingAmount") + 1;
+        document.getElementById("casingAmount").value = casingAmountNumber;
+        updateItemSpanText("casingPrice", 59, 1);
+        updateItemSpanText("sub-total", 59, 1);
+        updateItemSpanText("total", 59, 1);
+      });
+
+      // mobileMinus button handler
+      const casingMinusBtn = document.getElementById("casingMinus");
+      casingMinusBtn.addEventListener("click", function () {
+        const casingAmount = document.getElementById("casingAmount").value;
+        var casingAmountNumber = getInputNumber("casingAmount") - 1;
+        document.getElementById("casingAmount").value = casingAmountNumber;
+        updateItemSpanText("casingPrice", 59, 2);
+        updateItemSpanText("sub-total", 59, 2);
+        updateItemSpanText("total", 59, 2);
+      });
+
+      function getInputNumber(id) {
+        const item = document.getElementById(id).value;
+        var itemNumber = parseInt(item);
+        return itemNumber;
+      }
+
+      function updateItemSpanText(id, perItemPrice, sign) {
+        const current = document.getElementById(id).innerText;
+        const currentNumber = parseFloat(current);
+        if (sign == 1) {
+          var totalAmount = perItemPrice + currentNumber;
+        } else {
+          var totalAmount = currentNumber - perItemPrice;
+        }
+        document.getElementById(id).innerText = totalAmount;
+      }
+    </script>
+  </body>
 </html>
